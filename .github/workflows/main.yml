@@ -1,0 +1,112 @@
+name: CI/CD Pipeline for Alumni Engagement Portal
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Run Static Code Analysis
+        run: npm run lint
+
+      - name: Run Unit Tests
+        run: npm test
+
+      - name: Build Application
+        run: npm run build
+
+      - name: Upload Build Artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: build
+          path: ./build
+
+  development-deploy:
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Download Build Artifacts
+        uses: actions/download-artifact@v2
+        with:
+          name: build
+
+      - name: Deploy to Development
+        env:
+          DEV_SERVER: ${{ secrets.DEV_SERVER }}
+          DEV_USER: ${{ secrets.DEV_USER }}
+          DEV_PASSWORD: ${{ secrets.DEV_PASSWORD }}
+        run: |
+          echo "Deploying to Development Server..."
+          sshpass -p $DEV_PASSWORD ssh $DEV_USER@$DEV_SERVER 'mkdir -p /var/www/alumni-portal'
+          scp -o StrictHostKeyChecking=no -r ./build/* $DEV_USER@$DEV_SERVER:/var/www/alumni-portal/
+
+      - name: Run Smoke Tests on Development
+        run: |
+          echo "Running smoke tests on Development..."
+          curl --fail --silent --output /dev/null http://$DEV_SERVER/
+
+  staging-deploy:
+    runs-on: ubuntu-latest
+    needs: development-deploy
+    steps:
+      - name: Download Build Artifacts
+        uses: actions/download-artifact@v2
+        with:
+          name: build
+
+      - name: Deploy to Staging
+        env:
+          STAGING_SERVER: ${{ secrets.STAGING_SERVER }}
+          STAGING_USER: ${{ secrets.STAGING_USER }}
+          STAGING_PASSWORD: ${{ secrets.STAGING_PASSWORD }}
+        run: |
+          echo "Deploying to Staging Server..."
+          sshpass -p $STAGING_PASSWORD ssh $STAGING_USER@$STAGING_SERVER 'mkdir -p /var/www/alumni-portal'
+          scp -o StrictHostKeyChecking=no -r ./build/* $STAGING_USER@$STAGING_SERVER:/var/www/alumni-portal/
+
+      - name: Run Smoke Tests on Staging
+        run: |
+          echo "Running smoke tests on Staging..."
+          curl --fail --silent --output /dev/null http://$STAGING_SERVER/
+
+  production-deploy:
+    runs-on: ubuntu-latest
+    needs: staging-deploy
+    if: github.ref == 'refs/heads/main'
+    steps:
+      - name: Download Build Artifacts
+        uses: actions/download-artifact@v2
+        with:
+          name: build
+
+      - name: Deploy to Production
+        env:
+          PRODUCTION_SERVER: ${{ secrets.PRODUCTION_SERVER }}
+          PRODUCTION_USER: ${{ secrets.PRODUCTION_USER }}
+          PRODUCTION_PASSWORD: ${{ secrets.PRODUCTION_PASSWORD }}
+        run: |
+          echo "Deploying to Production Server..."
+          sshpass -p $PRODUCTION_PASSWORD ssh $PRODUCTION_USER@$PRODUCTION_SERVER 'mkdir -p /var/www/alumni-portal'
+          scp -o StrictHostKeyChecking=no -r ./build/* $PRODUCTION_USER@$PRODUCTION_SERVER:/var/www/alumni-portal/
+
+      - name: Notify Success
+        run: |
+          echo "Deployment to Production successful!"
+          # Optionally send notifications (e.g., Slack, Email)
