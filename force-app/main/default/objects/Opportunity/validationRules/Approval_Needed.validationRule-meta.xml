@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Approval_Needed</fullName>
+    <active>true</active>
+    <description>Enforce the user to submit approval for the current record in the Proposal/Price Quote stage.</description>
+    <errorConditionFormula>AND(
+OR(ISPICKVAL(StageName, &quot;Negotiation/Review&quot;),
+ISPICKVAL(StageName, &quot;Closed Won&quot;),
+ISPICKVAL(StageName, &quot;Closed Lost&quot;)),
+Approved__c = False
+)</errorConditionFormula>
+    <errorMessage>Please make sure you have submitted approval for your current record.</errorMessage>
+</ValidationRule>

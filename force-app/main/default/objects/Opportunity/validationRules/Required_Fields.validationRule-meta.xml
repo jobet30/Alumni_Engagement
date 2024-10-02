@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Required_Fields</fullName>
+    <active>true</active>
+    <description>The user must enter the Authority, Budget, Timing, and Need fields.</description>
+    <errorConditionFormula>OR(
+ISPICKVAL(   Authority__c , &quot;&quot;),
+ISBLANK(   Budget__c ),
+ISPICKVAL(  Timing__c , &quot;&quot;),
+ISPICKVAL( Need__c, &quot;&quot; ))</errorConditionFormula>
+    <errorMessage>Authority, Budget, Timing, and Need fields are required!</errorMessage>
+</ValidationRule>

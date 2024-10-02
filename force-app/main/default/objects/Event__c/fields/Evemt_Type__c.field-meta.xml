@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Evemt_Type__c</fullName>
+    <externalId>false</externalId>
+    <label>Evemt Type</label>
+    <required>true</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Webinar</fullName>
+                <default>false</default>
+                <label>Webinar</label>
+            </value>
+            <value>
+                <fullName>Seminar</fullName>
+                <default>false</default>
+                <label>Seminar</label>
+            </value>
+            <value>
+                <fullName>Workshop</fullName>
+                <default>false</default>
+                <label>Workshop</label>
+            </value>
+            <value>
+                <fullName>Conference</fullName>
+                <default>false</default>
+                <label>Conference</label>
+            </value>
+            <value>
+                <fullName>Networking Event</fullName>
+                <default>false</default>
+                <label>Networking Event</label>
+            </value>
+            <value>
+                <fullName>Training Session</fullName>
+                <default>false</default>
+                <label>Training Session</label>
+            </value>
+            <value>
+                <fullName>Fundraising Event</fullName>
+                <default>false</default>
+                <label>Fundraising Event</label>
+            </value>
+            <value>
+                <fullName>Product Launch</fullName>
+                <default>false</default>
+                <label>Product Launch</label>
+            </value>
+            <value>
+                <fullName>Trade Show</fullName>
+                <default>false</default>
+                <label>Trade Show</label>
+            </value>
+            <value>
+                <fullName>Panel Discussion</fullName>
+                <default>false</default>
+                <label>Panel Discussion</label>
+            </value>
+            <value>
+                <fullName>Roundtable</fullName>
+                <default>false</default>
+                <label>Roundtable</label>
+            </value>
+            <value>
+                <fullName>Virtual Meeting</fullName>
+                <default>false</default>
+                <label>Virtual Meeting</label>
+            </value>
+            <value>
+                <fullName>Community Outreach</fullName>
+                <default>false</default>
+                <label>Community Outreach</label>
+            </value>
+            <value>
+                <fullName>Annual General Meeting</fullName>
+                <default>false</default>
+                <label>Annual General Meeting</label>
+            </value>
+            <value>
+                <fullName>Career Fair</fullName>
+                <default>false</default>
+                <label>Career Fair</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

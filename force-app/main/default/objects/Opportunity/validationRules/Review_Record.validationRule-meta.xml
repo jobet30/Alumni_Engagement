@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Review_Record</fullName>
+    <active>true</active>
+    <description>User needs to create a Review record on Opportunity when stage = Value Proposition</description>
+    <errorConditionFormula>AND(
+OR(ISPICKVAL(StageName, &quot;Id. Decision Makers&quot;),
+ISPICKVAL(StageName, &quot;Perception Analysis&quot;),
+ISPICKVAL(StageName, &quot;Proposal/Price Quote&quot;),
+ISPICKVAL(StageName, &quot;Negotiation/Review&quot;),
+ISPICKVAL(StageName, &quot;Closed Won&quot;),
+ISPICKVAL(StageName, &quot;Closed Lost&quot;)),
+
+
+ReviewExist__c = 0
+)</errorConditionFormula>
+    <errorMessage>Please ensure you have created a Review record in the Value Proposition Stage.</errorMessage>
+</ValidationRule>

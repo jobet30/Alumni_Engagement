@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Degree__c</fullName>
+    <externalId>false</externalId>
+    <label>Degree</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Bachelor of Arts (BA)</fullName>
+                <default>false</default>
+                <label>Bachelor of Arts (BA)</label>
+            </value>
+            <value>
+                <fullName>Bachelor of Science (BS)</fullName>
+                <default>false</default>
+                <label>Bachelor of Science (BS)</label>
+            </value>
+            <value>
+                <fullName>Bachelor of Business Administration (BBA)</fullName>
+                <default>false</default>
+                <label>Bachelor of Business Administration (BBA)</label>
+            </value>
+            <value>
+                <fullName>Bachelor of Fine Arts (BFA)</fullName>
+                <default>false</default>
+                <label>Bachelor of Fine Arts (BFA)</label>
+            </value>
+            <value>
+                <fullName>Bachelor of Engineering (BEng)</fullName>
+                <default>false</default>
+                <label>Bachelor of Engineering (BEng)</label>
+            </value>
+            <value>
+                <fullName>Bachelor of Technology (BTech)</fullName>
+                <default>false</default>
+                <label>Bachelor of Technology (BTech)</label>
+            </value>
+            <value>
+                <fullName>Bachelor of Education (BEd)</fullName>
+                <default>false</default>
+                <label>Bachelor of Education (BEd)</label>
+            </value>
+            <value>
+                <fullName>Bachelor of Nursing (BN)</fullName>
+                <default>false</default>
+                <label>Bachelor of Nursing (BN)</label>
+            </value>
+            <value>
+                <fullName>Bachelor of Computer Science (BCS)</fullName>
+                <default>false</default>
+                <label>Bachelor of Computer Science (BCS)</label>
+            </value>
+            <value>
+                <fullName>Bachelor of Information Technology (BIT)</fullName>
+                <default>false</default>
+                <label>Bachelor of Information Technology (BIT)</label>
+            </value>
+            <value>
+                <fullName>Bachelor of Information Systems (BIS)</fullName>
+                <default>false</default>
+                <label>Bachelor of Information Systems (BIS)</label>
+            </value>
+            <value>
+                <fullName>Bachelor of Computer Engineering (BCE)</fullName>
+                <default>false</default>
+                <label>Bachelor of Computer Engineering (BCE)</label>
+            </value>
+            <value>
+                <fullName>Master of Arts (MA)</fullName>
+                <default>false</default>
+                <label>Master of Arts (MA)</label>
+            </value>
+            <value>
+                <fullName>Master of Science (MS)</fullName>
+                <default>false</default>
+                <label>Master of Science (MS)</label>
+            </value>
+            <value>
+                <fullName>Master of Business Administration (MBA)</fullName>
+                <default>false</default>
+                <label>Master of Business Administration (MBA)</label>
+            </value>
+            <value>
+                <fullName>Master of Fine Arts (MFA)</fullName>
+                <default>false</default>
+                <label>Master of Fine Arts (MFA)</label>
+            </value>
+            <value>
+                <fullName>Master of Education (MEd)</fullName>
+                <default>false</default>
+                <label>Master of Education (MEd)</label>
+            </value>
+            <value>
+                <fullName>Master of Engineering (MEng)</fullName>
+                <default>false</default>
+                <label>Master of Engineering (MEng)</label>
+            </value>
+            <value>
+                <fullName>Master of Public Administration (MPA)</fullName>
+                <default>false</default>
+                <label>Master of Public Administration (MPA)</label>
+            </value>
+            <value>
+                <fullName>Master of Social Work (MSW)</fullName>
+                <default>false</default>
+                <label>Master of Social Work (MSW)</label>
+            </value>
+            <value>
+                <fullName>Master of Computer Science (MCS)</fullName>
+                <default>false</default>
+                <label>Master of Computer Science (MCS)</label>
+            </value>
+            <value>
+                <fullName>Master of Information Technology (MIT)</fullName>
+                <default>false</default>
+                <label>Master of Information Technology (MIT)</label>
+            </value>
+            <value>
+                <fullName>Master of Information Systems (MIS)</fullName>
+                <default>false</default>
+                <label>Master of Information Systems (MIS)</label>
+            </value>
+            <value>
+                <fullName>Master of Computer Engineering (MCE)</fullName>
+                <default>false</default>
+                <label>Master of Computer Engineering (MCE)</label>
+            </value>
+            <value>
+                <fullName>Doctor of Philosophy (PhD)</fullName>
+                <default>false</default>
+                <label>Doctor of Philosophy (PhD)</label>
+            </value>
+            <value>
+                <fullName>Doctor of Education (EdD)</fullName>
+                <default>false</default>
+                <label>Doctor of Education (EdD)</label>
+            </value>
+            <value>
+                <fullName>Doctor of Business Administration (DBA)</fullName>
+                <default>false</default>
+                <label>Doctor of Business Administration (DBA)</label>
+            </value>
+            <value>
+                <fullName>Doctor of Nursing Practice (DNP)</fullName>
+                <default>false</default>
+                <label>Doctor of Nursing Practice (DNP)</label>
+            </value>
+            <value>
+                <fullName>Doctor of Computer Science (DCS)</fullName>
+                <default>false</default>
+                <label>Doctor of Computer Science (DCS)</label>
+            </value>
+            <value>
+                <fullName>Doctor of Information Technology (DIT)</fullName>
+                <default>false</default>
+                <label>Doctor of Information Technology (DIT)</label>
+            </value>
+            <value>
+                <fullName>Doctor of Information Systems (DIS)</fullName>
+                <default>false</default>
+                <label>Doctor of Information Systems (DIS)</label>
+            </value>
+            <value>
+                <fullName>Doctor of Engineering (EngD)</fullName>
+                <default>false</default>
+                <label>Doctor of Engineering (EngD)</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

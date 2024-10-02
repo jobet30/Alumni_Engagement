@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>UTF-8</encodingKey>
+    <name>Event Registration Message</name>
+    <style>none</style>
+    <subject>Event Registration</subject>
+    <textOnly>Event Registration Confirmation
+
+Thank you for registering for the upcoming event, {!Event__c.Event_Name__c}!
+
+Dear {!Contact.FirstName},
+
+We are excited to confirm your participation in the event. Below are the event details:
+
+Event Name: {!Event__c.Event_Name__c}
+Event Date: {!Event__c.Event_Date__c}
+Event Time: {!Event__c.Start_Time__c}
+Location: {IEvent__c.Location__c}
+Description: {Event__c.Description__c}
+
+You will receive further communication as the event date approaches. In the meantime, if you have any questions, feel free to reach out to us at {!Event__c.Contact_Email__c} or call us at {!Event__c.Contact_Phone__c}.
+
+We look forward to seeing you at the event!
+
+Best regards,
+
+{!Account.Name}
+
+{!Account.PersonEmail}
+
+{!Account.Phone}
+
+This email was sent from {!Account.Name}. If you have any questions, please contact us at {!Account.PersonEmail}.</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Oppt_Closedate</fullName>
+    <active>true</active>
+    <description>The Opportunity Close date cannot be in the past.</description>
+    <errorConditionFormula>CloseDate &lt; TODAY() &amp;&amp; IsNew()</errorConditionFormula>
+    <errorMessage>The Opportunity Close Date cannot be scheduled before the current date.</errorMessage>
+</ValidationRule>

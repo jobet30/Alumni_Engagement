@@ -1,0 +1,25 @@
+<div style="background-color: #ffffff; margin: 20px auto; padding: 20px; border-radius: 8px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); max-width: 600px">
+<h1 style="color: #333333;">Event Registration Confirmation</h1>
+<p>Thank you for registering for the upcoming event, <strong>{!Event__c.Event_Name__c}</strong>!</p>
+<p style="color: #555555;">Dear {!Contact.FirstName},</p>
+<p>We are excited to confirm your participation in the event. Below are the event details:</p>
+<ul>
+<li><strong>Event Name:</strong> {!Event__c.Event_Name__c}</li>
+<li><strong>Event Date:</strong> {!Event__c.Event_Date__c}</li>
+<li><strong>Event Time:</strong> {!Event__c.Start_Time__c}</li>
+<li><strong>Location:</strong> {IEvent__c.Location__c}</li>
+<li><strong>Description:</strong> {Event__c.Description__c}</li>
+</ul>
+<p>You will receive further communication as the event date approaches. In the meantime, if you have any questions, feel free to reach out to us at {!Event__c.Contact_Email__c} or call us at {!Event__c.Contact_Phone__c}.</p>
+
+<p>We look forward to seeing you at the event!</p>
+
+<p>Best regards,</p>
+<p>{!Account.Name}</p>
+<p>{!Account.PersonEmail}</p>
+<p>{!Account.Phone}</p>
+
+<div style="margin-top: 20px; font-size: 12px; color: #777777;">
+<p>This email was sent from {!Account.Name}. If you have any questions, please contact us at {!Account.PersonEmail}.</p>
+</div>
+</div>
